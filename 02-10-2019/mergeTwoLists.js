@@ -27,4 +27,4 @@ const l2c = new ListNode(4);
 l2a.next = l2b;
 l2b.next = l2c;
 
-console.log(l1a);
+console.log(mergeTwoLists());
