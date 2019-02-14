@@ -8,7 +8,14 @@ function ListNode(val) {
 //  * @param {ListNode} l2
 //  * @return {ListNode}
 
-var mergeTwoLists = function(l1, l2) {};
+var mergeTwoLists = function(l1, l2) {
+  // base case
+  if (l1 === null || l2 === null) {
+    return;
+  }
+  // recursive case
+
+};
 
 // Input: 1->2->4, 1->3->4
 // Output: 1->1->2->3->4->4
@@ -27,4 +34,4 @@ const l2c = new ListNode(4);
 l2a.next = l2b;
 l2b.next = l2c;
 
-console.log(mergeTwoLists());
+console.log(mergeTwoLists(l1a, l2a));
