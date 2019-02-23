@@ -3,17 +3,33 @@
  * @return {boolean}
  */
 
+// var containsDuplicate = function(nums) {
+//   const table = [];
+//   let containsDup = false;
+
+//   nums.forEach(num => {
+//     if (table.includes(num)) {
+//       containsDup = true;
+//     }
+//     table.push(num);
+//   });
+//   return containsDup;
+// };
+
 var containsDuplicate = function(nums) {
   const table = [];
   let containsDup = false;
 
-  nums.forEach(num => {
-    if (table.includes(num)) {
-      containsDup = true;
+  nums.some(num => {
+    if () {
+
     }
-    table.push(num);
+    // if (table.includes(num)) {
+    //   containsDup = true;
+    // }
+    // table.push(num);
   });
-  return containsDup;
+  // return containsDup;
 };
 
 console.log(containsDuplicate([1, 2, 3, 1]));
