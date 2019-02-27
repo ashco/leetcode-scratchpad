@@ -8,14 +8,14 @@ function TreeNode(val) {
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function(root) {
+function maxDepth(root) {
   // Base case
   if (root === null) return 0;
   // Recursive case
   const depthLeft = maxDepth(root.left) + 1;
   const depthRight = maxDepth(root.right) + 1;
   return depthLeft > depthRight ? depthLeft : depthRight;
-};
+}
 
 // [3,9,20,null,null,15,7],
 //     3

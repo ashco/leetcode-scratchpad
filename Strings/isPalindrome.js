@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(s) {
+const isPalindrome = function(s) {
   s = s.toLowerCase().replace(/\W/gi, '');
   const t = s.split('').reverse();
 
