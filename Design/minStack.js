@@ -2,7 +2,7 @@
  * initialize your data structure here.
  */
 const MinStack = function() {
-  this.value = [];
+  this.arr = [];
   return this;
 };
 
@@ -11,29 +11,31 @@ const MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(x) {
-  this.value.push(x);
+  this.arr.push(x);
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-  this.value.splice(-1);
+  this.arr.splice(-1);
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function() {
-  return this.value[this.value.length - 1];
+  return this.arr[this.arr.length - 1];
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-  const arr = this.value.sort((a, b) => a > b);
-  return arr[0];
+  const { arr } = this;
+  const ans = arr.sort((a, b) => a - b)[0];
+  console.log(arr);
+  return ans;
 };
 
 /**
