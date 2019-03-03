@@ -4,8 +4,8 @@
  */
 
 const validNums = function(range) {
-  const nums = range.filter(num => num !== '.');
   const hash = [];
+  const nums = range.filter(num => num !== '.');
 
   for (let i = 0; i < nums.length; i += 1) {
     const val = nums[i];
@@ -53,20 +53,12 @@ const generateGrid = function(board) {
 };
 
 const isValidSudoku = function(board) {
-  // run validNums on each sub array
-  board.forEach((row) => {
-    if (!validNums(row)) return false;
-  });
-  // generate 9 column arrays & run validNums on subArray[0 - 8]
   const colBoard = generateColumns(board);
-  colBoard.forEach((col) => {
-    if (!validNums(col)) return false;
-  });
-  // create 9 3x3 grid arrays & run validNums on grid arrays
   const gridBoard = generateGrid(board);
-  gridBoard.forEach((grid) => {
-    if (!validNums(grid)) return false;
-  });
+
+  if (!board.every(validNums)) return false;
+  if (!colBoard.every(validNums)) return false;
+  if (!gridBoard.every(validNums)) return false;
 
   return true;
 };
@@ -95,6 +87,6 @@ const y = [
   ['.', '.', '.', '.', '8', '.', '.', '7', '9'],
 ];
 
-// console.log(isValidSudoku(x)); // true
-console.log(isValidSudoku(y)); // false
+console.log(isValidSudoku(x)); // true
+// console.log(isValidSudoku(y)); // false
 // console.log(validNums(['8', '3', '.', '.', '7', '9', '.', '.', '.'])); // false
